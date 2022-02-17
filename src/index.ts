@@ -9,8 +9,43 @@ dotenv.config();
 (async () => {
     // await scrapingFastPeopleSearchLuminati();
     // await scrapingFastPeopleSearchScrapingBee();
-    await scrapingFastPeopleSearchScraperAPI();
-    // await scrapingFastPeopleSearchProxyCrawl();
+    // await scrapingFastPeopleSearchScraperAPI();
+    await scrapingFastPeopleSearchProxyCrawl();
+
+    // Luminati pizza.com
+    // Average Speed 0.1875 seconds
+    // Errors - 0
+    
+    // ScrapingBee pizza.com
+    // Average Speed 3.7455 seconds
+    // Errors - 0
+    
+    // ScraperAPI pizza.com
+    // Average Speed 6.962 seconds
+    // Errors - 0
+    
+    // ProxyCrawl pizza.com
+    // Average Speed 19.843 seconds
+    // Errors - 0
+
+
+
+
+    // Luminati fastpeoplesearch.com
+    // Average Speed 1.704 seconds
+    // Errors - 11
+    
+    // ScrapingBee fastpeoplesearch.com
+    // Average Speed 3.574 seconds
+    // Errors - 2
+    
+    // ScraperAPI fastpeoplesearch.com
+    // Average Speed 6.962 seconds
+    // Errors - 0
+    
+    // ProxyCrawl fastpeoplesearch.com
+    // Average Speed 5.831 seconds
+    // Errors - 10
 })();
 
 
@@ -24,8 +59,8 @@ async function scrapingFastPeopleSearchScrapingBee() {
         const startTime = performance.now();
         let endTime;
         try {
-            // const url = 'https://www.fastpeoplesearch.com/name/john-doe_biloxi-ms';
-            const url = 'http://pizza.com';
+            const url = 'https://www.fastpeoplesearch.com/name/john-doe_biloxi-ms';
+            // const url = 'http://pizza.com';
             const axiosResponse = await axios.get('https://app.scrapingbee.com/api/v1', {
                 params: {
                     'api_key': process.env.scrapingBeeApiKey,
@@ -62,8 +97,8 @@ async function scrapingFastPeopleSearchScraperAPI() {
     for (let i = 0; i < 20; i++) {
         const startTime = performance.now();
         let endTime;
-        // const url = 'https://www.fastpeoplesearch.com/name/john-doe_biloxi-ms';
-        const url = 'http://pizza.com';
+        const url = 'https://www.fastpeoplesearch.com/name/john-doe_biloxi-ms';
+        // const url = 'http://pizza.com';
         try {
             const axiosResponse = await axios.get(`http://api.scraperapi.com?api_key=${process.env.scraperApiApiKey}&url=${encodeURIComponent(url)}&premium=true`);
             endTime = performance.now();
