@@ -40,8 +40,8 @@ dotenv.config();
     // Errors - 2
     
     // ScraperAPI fastpeoplesearch.com
-    // Average Speed 6.962 seconds
-    // Errors - 0
+    // Average Speed 18.445 seconds
+    // Errors - 14
     
     // ProxyCrawl fastpeoplesearch.com
     // Average Speed 5.831 seconds
